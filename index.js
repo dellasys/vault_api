@@ -48,7 +48,7 @@ app.post('/object', function (req, res) {
 
 
 
-var port = 3000;
+var port = process.env.PORT || 5000
 var server = app.listen(port, () => {
     console.log('App start listening on port ' + port + '.....');
 });
