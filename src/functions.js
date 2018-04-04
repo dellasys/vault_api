@@ -1,4 +1,12 @@
-var nano = require('nano')('http://localhost:5984');
+
+var url = ''
+if(process.env.MODE == 'CLOUD'){
+    url = 'https://'+process.env.USERNAME+':'+process.env.PASSWORD+'@'+process.env.HOST
+}else{
+    url = process.env.LOCALHOST
+}
+
+var nano = require('nano')(url);
 var vaultApi = nano.db.use('vault_api');
 const errorNotFound = {statusCode:404, error:'Not Found'};
 

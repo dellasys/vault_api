@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+require('dotenv').config();
 
 // to support JSON-encoded bodies
 app.use(bodyParser.json());
